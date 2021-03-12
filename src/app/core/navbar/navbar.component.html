@@ -1,0 +1,16 @@
+<nav class="navbar-container">
+  <div class="logo">
+    <img src="" alt="" />
+  </div>
+  <div class="navbuttons">
+    <a
+    class="button is-warning column is-one-fifth"
+    *ngFor="let nav of NavButtons"
+    routerLink="{{ nav.toRoute }}"
+    routerLinkActive="active"
+    title="{{ nav?.feature }}"
+  >
+    {{ nav.title }}
+  </a>
+  </div>
+</nav>
