@@ -1,16 +1,21 @@
 <nav class="navbar-container">
   <div class="logo">
     <img src="" alt="" />
+    logo
   </div>
   <div class="navbuttons">
     <a
-    class="button is-warning column is-one-fifth"
+    class="navbutton"
     *ngFor="let nav of NavButtons"
     routerLink="{{ nav.toRoute }}"
     routerLinkActive="active"
     title="{{ nav?.feature }}"
   >
+  <img src="" alt="{{nav.feature}}">
     {{ nav.title }}
   </a>
+  </div>
+  <div>
+      <p>login</p>
   </div>
 </nav>

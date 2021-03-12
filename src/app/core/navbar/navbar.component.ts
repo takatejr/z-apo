@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavButtons } from 'src/app/shared/types/navbuttons.type';
+import { NavBtn } from '../../shared/mockup/navbtn.mockup';
 
 @Component({
   selector: 'app-navbar',
@@ -7,7 +8,7 @@ import { NavButtons } from 'src/app/shared/types/navbuttons.type';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  NavButtons: NavButtons[] = []
+  NavButtons: NavButtons[] = NavBtn
 
   constructor() { }
 

@@ -1,0 +1,19 @@
+@import '../../shared/variables.scss';
+
+.navbar-container {
+    height: $navbar-container-height;
+    width: 100vw;
+    background-color: rgb(30, 30, 130);
+    display: flex;
+}
+
+.logo {
+    height: $navbar-container-height;
+    width: 6vw;
+    color: whitesmoke;
+    margin: 1vh 1vw;
+}
+
+.navbuttons {
+    width: 70vw;
+}
