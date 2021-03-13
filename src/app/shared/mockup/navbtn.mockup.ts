@@ -1,4 +1,4 @@
-import { NavButtons } from "../types/navbuttons.type";
+import { NavButtons } from "../types/NavButtons.type";
 
 
 export const NavBtn: NavButtons[] = [

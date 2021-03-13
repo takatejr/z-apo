@@ -1,0 +1,14 @@
+[0m2021.03.13 12:18:12 INFO  Started: Metals version 0.10.0 in workspace 'D:\z-apo\z-apo' for client vscode 1.54.2.[0m
+[0m2021.03.13 12:18:18 INFO  time: initialize in 5.92s[0m
+[0m2021.03.13 12:18:21 WARN  Build server is not auto-connectable.[0m
+[0m2021.03.13 12:18:21 WARN  no build tool detected in workspace 'D:\z-apo\z-apo'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+[0m2021.03.13 14:56:39 INFO  shutting down Metals[0m
+[0m2021.03.13 16:12:48 INFO  Started: Metals version 0.10.0 in workspace 'D:\z-apo\z-apo' for client vscode 1.54.2.[0m
+[0m2021.03.13 16:12:57 INFO  time: initialize in 8.87s[0m
+[0m2021.03.13 16:12:59 WARN  Build server is not auto-connectable.[0m
+[0m2021.03.13 16:12:59 WARN  no build tool detected in workspace 'D:\z-apo\z-apo'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+[0m2021.03.13 16:16:34 INFO  shutting down Metals[0m
+[0m2021.03.13 19:15:49 INFO  Started: Metals version 0.10.0 in workspace 'D:\z-apo\z-apo' for client vscode 1.54.2.[0m
+[0m2021.03.13 19:15:53 INFO  time: initialize in 3.94s[0m
+[0m2021.03.13 19:15:54 WARN  Build server is not auto-connectable.[0m
+[0m2021.03.13 19:15:54 WARN  no build tool detected in workspace 'D:\z-apo\z-apo'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m

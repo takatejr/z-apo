@@ -1,43 +1,35 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { map } from 'rxjs/operators'
+import { catchError, map } from 'rxjs/operators'
+import { FetchData } from '../../types/FetchData.type';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
+  data = new BehaviorSubject<FetchData | unknown>([])
   isLoggedIn = new BehaviorSubject<boolean>(false) // tutaj powinno być sprawdzenie tokena i next do isLoggedIn
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private route: Router) { }
 
-  login(login = "guest", password = "guest"): Observable<any> {
-    const payload = {
-      login: login,
-      password: password
-    }
-
-    return this.http.post(`${environment.API_URL}login`, payload)
-      .pipe(
-        map(matched => {
-          if (matched) {
-            this.isLoggedIn.next(true)
-          }
-        })
-      )
+  fetchData() {
+    return this.http.get(`${environment.API_URL}`)
+      .subscribe((data: FetchData | unknown) => {
+        this.data.next(data);
+        catchError(e => throwError(e))
+      })
   }
 
-  logout(login = "guest", password = "guest"): Observable<any> {
-    const payload = {
-      login: login,
-      password: password
-    }
+  login() {
+    this.isLoggedIn.next(true)
+  }
 
-    return this.http.post(`${environment.API_URL}login`, payload)
-      .pipe(
-        this.isLoggedIn.next(false)
-      )
+  logout() {
+    this.isLoggedIn.next(false)
+    this.route.navigateByUrl("")
   }
 }

@@ -5,17 +5,20 @@
   </div>
   <div class="navbuttons">
     <a
-    class="navbutton"
-    *ngFor="let nav of NavButtons"
-    routerLink="{{ nav.toRoute }}"
-    routerLinkActive="active"
-    title="{{ nav?.feature }}"
-  >
-  <img src="" alt="{{nav.feature}}">
-    {{ nav.title }}
-  </a>
+      class="navbutton"
+      *ngFor="let nav of NavButtons"
+      routerLink="/{{ nav.toRoute }}"
+      routerLinkActive="active"
+      title="{{ nav?.feature }}"
+    >
+      <img src="" alt="{{ nav.feature }}" />
+      {{ nav.title }}
+    </a>
   </div>
-  <div>
-      <p>login</p>
-  </div>
+  <button class="login-logout" (click)="login()" *ngIf="!(isLoggedIn | async)">
+    <p>login</p>
+  </button>
+  <button class="login-logout" (click)="logout()" *ngIf="isLoggedIn | async">
+    <p>logout</p>
+  </button>
 </nav>
