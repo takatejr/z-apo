@@ -28,3 +28,56 @@
 </form>
 
 {{ clearx$ | async }}
+
+<div>
+  Filter by:
+  <div class="filter-container">
+    <app-filter></app-filter>
+    <app-filter></app-filter>
+    <app-filter></app-filter>
+    <app-filter></app-filter>
+    <app-filter></app-filter>
+  </div>
+</div>
+
+
+<div *ngIf="data$ | async">
+  <div *ngFor="let item of (data$ | async)">
+    {{item.id}}
+  
+  </div>
+  
+</div>
+<app-circle></app-circle>
+
+
+
+
+
+
+
+
+<div>
+  <div class="board">
+    <span class="result">Result</span>
+    <span class="companies">Companies</span>
+    <span class="countries">Countries</span>
+    <span class="excel">Export to excel</span>
+  </div>
+  <div class="sort">
+    <div class="sort-score"></div>
+    <div class="sort-size"></div>
+  </div>
+  <ul>
+    <li >
+      <div class="score"></div>
+      <div class="description">
+        <span class="title"></span>
+        <div class="details">
+
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+

@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { CoreModule } from './core/core.module';
 import { DashboardModule } from './pages/dashboard/dashboard.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +19,7 @@ import { DashboardModule } from './pages/dashboard/dashboard.module';
     BrowserAnimationsModule,
     CoreModule,
     DashboardModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

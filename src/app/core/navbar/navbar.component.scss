@@ -1,19 +1,78 @@
-@import '../../shared/variables.scss';
+@import "../../shared/variables.scss";
+
+* {
+    font-size: 18px;
+}
 
 .navbar-container {
-    height: $navbar-container-height;
-    width: 100vw;
-    background-color: rgb(30, 30, 130);
-    display: flex;
+  height: $navbar-container-height;
+  width: 100vw;
+  background-color: rgb(30, 30, 130);
+  display: flex;
 }
 
 .logo {
-    height: $navbar-container-height;
-    width: 6vw;
+    height: 100%;
+    width: 8vw;
     color: whitesmoke;
-    margin: 1vh 1vw;
+    margin: 0 1%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
 }
 
 .navbuttons {
-    width: 70vw;
+  display: flex;
+  width: 70vw;
+  background-color: rgb(30, 30, 130);
+
+  & > .navbutton {
+    display: flex;
+    height: 60%;
+    min-width: 10%;
+    max-width: 40%;
+    align-items: center;
+    margin: auto 1vw;
+    color: whitesmoke;
+    column-gap: 5%;
+    cursor: pointer;
+
+    & > .icon {
+      height: 40%;
+    }
+
+    & > .nav-title {
+        min-width: 10vw;
+        max-width: 50vw;
+        word-break: break-word;
+        margin: 1%;
+    }
+  }
+}
+
+.icon {
+  height: 30%;
+  color: whitesmoke;
+}
+
+.login-logout {
+  color: whitesmoke;
+  border: solid 2px white;
+  margin: auto 1% auto auto;
+  height: 60%;
+  width: 9%;
+  border-radius: 3%;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  justify-items: center;
+
+  & > .login-text {
+    margin: auto;
+  }
+
+  & > .icon {
+    margin: auto;
+    height: 70%;
+  }
 }

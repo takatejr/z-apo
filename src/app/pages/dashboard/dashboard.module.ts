@@ -6,6 +6,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FilterModule } from '../../components/filter/filter.module';
+import { CircleModule } from '../../components/circle/circle.module';
 
 @NgModule({
     declarations: [DashboardComponent],
@@ -15,7 +16,8 @@ import { FilterModule } from '../../components/filter/filter.module';
         MatFormFieldModule,
         MatInputModule,
         ReactiveFormsModule,
-        FilterModule
+        FilterModule,
+        CircleModule
     ],
     exports: [
         DashboardComponent,

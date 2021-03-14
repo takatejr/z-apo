@@ -1,5 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { map } from 'rxjs/operators';
+import { Component, OnInit } from '@angular/core';
 import { NavButtons } from 'src/app/shared/types/NavButtons.type';
 import { NavBtn } from '../../shared/mockup/navbtn.mockup';
 import { AuthService } from '../../shared/services/auth/auth.service';

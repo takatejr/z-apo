@@ -1,24 +1,25 @@
 <nav class="navbar-container">
   <div class="logo">
-    <img src="" alt="" />
-    logo
+    <span class="nav-title"> logo</span>
   </div>
   <div class="navbuttons">
-    <a
+    <div
       class="navbutton"
       *ngFor="let nav of NavButtons"
       routerLink="/{{ nav.toRoute }}"
       routerLinkActive="active"
       title="{{ nav?.feature }}"
     >
-      <img src="" alt="{{ nav.feature }}" />
-      {{ nav.title }}
-    </a>
+      <img src="{{ nav.icon }}" alt="{{ nav.feature }}" class="icon" />
+      <span class="nav-title">{{ nav.title }}</span>
+    </div>
   </div>
-  <button class="login-logout" (click)="login()" *ngIf="!(isLoggedIn | async)">
-    <p>login</p>
-  </button>
-  <button class="login-logout" (click)="logout()" *ngIf="isLoggedIn | async">
-    <p>logout</p>
-  </button>
+  <div class="login-logout" (click)="login()" *ngIf="!(isLoggedIn | async)">
+    <p class="login-text">Sign in</p>
+    <img src="assets/sign.svg" alt="Sign in" class="icon" />
+  </div>
+  <div class="login-logout" (click)="logout()" *ngIf="isLoggedIn | async">
+    <p class="login-text">Sign out</p>
+    <img src="assets/sign.svg" alt="Sign Out" class="icon" />
+  </div>
 </nav>

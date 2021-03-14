@@ -1,15 +1,17 @@
 import { NavButtons } from "../types/NavButtons.type";
 
 
-export const NavBtn: NavButtons[] = [
+export const NavBtn = [
     {
         title: "Home",
         feature: "HomePage",
-        toRoute: ""
+        toRoute: "",
+        icon: "../assets/home.svg"
     },
     {
         title: "Dashboard",
         feature: "Dashboard",
-        toRoute: "dashboard"
+        toRoute: "dashboard",
+        icon: "../assets/grid.svg"
     }
 ]
