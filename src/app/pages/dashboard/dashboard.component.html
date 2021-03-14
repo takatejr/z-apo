@@ -1,1 +1,30 @@
 <p>dashboard works!</p>
+<form>
+  <mat-form-field appearance="outline">
+    <mat-label></mat-label>
+    <input
+      matInput
+      type="text"
+      aria-label="text"
+      placeholder="Placeholder"
+      [formControl]="searchControl"
+      (keydown.enter)="
+        $event.preventDefault(); searchByInputValue(searchControl.value)
+      "
+    />
+    <mat-icon
+      class="clear"
+      matSuffix
+      *ngIf="clearx$ | async"
+      (click)="clearSearchControl()"
+    >
+      <div class="box">
+        <span class="cross">x</span>
+        <span>Clear all filters</span>
+      </div></mat-icon
+    >
+    <mat-hint>Hint</mat-hint>
+  </mat-form-field>
+</form>
+
+{{ clearx$ | async }}

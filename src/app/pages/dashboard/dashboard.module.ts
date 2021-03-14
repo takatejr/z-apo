@@ -2,17 +2,23 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
-import { FilterComponent } from '../../components/filter/filter.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FilterModule } from '../../components/filter/filter.module';
 
 @NgModule({
-    declarations: [DashboardComponent, FilterComponent],
+    declarations: [DashboardComponent],
     imports: [
         CommonModule,
-        DashboardRoutingModule
+        DashboardRoutingModule,
+        MatFormFieldModule,
+        MatInputModule,
+        ReactiveFormsModule,
+        FilterModule
     ],
     exports: [
         DashboardComponent,
-        FilterComponent
     ]
 })
 export class DashboardModule { }
