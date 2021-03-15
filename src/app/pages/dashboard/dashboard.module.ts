@@ -24,7 +24,7 @@ import { DashboardDataService } from '../../shared/services/dashboard-data/dashb
         DashboardComponent,
     ],
     providers: [
-        DashboardDataService 
+        DashboardDataService
     ]
 })
 export class DashboardModule { }

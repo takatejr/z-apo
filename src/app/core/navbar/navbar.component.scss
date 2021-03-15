@@ -1,57 +1,54 @@
 @import "../../shared/variables.scss";
 
 * {
-    font-size: 1.4vvw;
+  font-size: 1.4vvw;
 }
 
 .navbar-container {
   height: $navbar-container-height;
-  width: 100vw;
+  width: 100%;
   background-color: rgb(30, 30, 130);
   display: flex;
 }
 
 .logo {
-    height: 100%;
-    width: 8%;
-    color: whitesmoke;
-    margin: 0 1%;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
+  height: 100%;
+  width: 8%;
+  color: whitesmoke;
+  margin: 0 1%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
 }
 
 .navbuttons {
-  display: flex;
-  width: 70%;
+  display: grid;
+  height: 100%;
+  grid-template-columns: 1fr 1fr;
   background-color: rgb(30, 30, 130);
+  margin: auto 0 ;
 
   & > .navbutton {
     display: flex;
-    height: 60%;
-    min-width: 10%;
-    max-width: 40%;
     align-items: center;
     color: whitesmoke;
     column-gap: 5%;
     cursor: pointer;
-    margin: auto 5%;
+    width: 50%;
 
     & > .icon {
-      height: 40%;
+      height: 18px;
     }
 
     & > .nav-title {
-        min-width: 10vw;
-        max-width: 50vw;
-        margin: 1%;
+      margin: 1%;
     }
   }
 }
 
 .icon {
-  height: 30%;
+  height: 18px;
   color: whitesmoke;
 }
 
@@ -60,7 +57,6 @@
   border: solid 2px white;
   margin: auto 1% auto auto;
   height: 60%;
-  width: 9%;
   border-radius: 3%;
   display: grid;
   grid-template-columns: 3fr 1fr;
@@ -68,7 +64,8 @@
   cursor: pointer;
 
   & > .login-text {
-    margin: auto;
+    width: 60px;
+    margin: auto 10px;
   }
 
   & > .icon {
@@ -77,9 +74,10 @@
   }
 }
 
-
 @media (max-width: 1250px) {
-  .navbutton {
-    min-width: 40vw;
+  .navbuttons {
+    & > .navbutton {
+      margin: auto 5%;
+    }
   }
 }

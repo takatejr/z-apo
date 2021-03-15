@@ -15,11 +15,11 @@
     </div>
   </div>
   <div class="login-logout" (click)="login()" *ngIf="!(isLoggedIn | async)">
-    <p class="login-text">Sign in</p>
+    <p class="login-text">Sign in </p>
     <img src="assets/sign.svg" alt="Sign in" class="icon" />
   </div>
   <div class="login-logout" (click)="logout()" *ngIf="isLoggedIn | async">
-    <p class="login-text">Sign out</p>
+    <p class="login-text">Sign out </p>
     <img src="assets/sign.svg" alt="Sign Out" class="icon" />
   </div>
 </nav>
