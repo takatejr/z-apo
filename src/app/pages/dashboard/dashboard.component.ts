@@ -1,4 +1,4 @@
-import { Component,  OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { distinctUntilChanged, filter, map, mergeMap, startWith, switchMap, tap } from 'rxjs/operators';
 import { Observable, of, BehaviorSubject, combineLatest, from, forkJoin } from 'rxjs';
@@ -30,48 +30,48 @@ export class DashboardComponent implements OnInit {
     this.outputUsername$,
     this.outputWebsite$,
     this.outputPhone$,
-    ])
+  ])
     .pipe(map(e => e))
 
 
   searchControl = new FormControl();
   clear$: Observable<string> = of('')
-  data$: Observable<any> =      combineLatest([this.outputs$, this.dashboardService.data.asObservable()]).pipe(
+  data$: Observable<any> = combineLatest([this.outputs$, this.dashboardService.data.asObservable()]).pipe(
     map(([outs, datax]) => {
-     const emailFilter = datax.filter(({email}) => {
-     if (!this.outputEmail$.value[0]){
-        return true
-      } else {
-        return this.outputEmail$.value.includes(email as never)
-      }
+      const emailFilter = datax.filter(({ email }) => {
+        if (!this.outputEmail$.value[0]) {
+          return true
+        } else {
+          return this.outputEmail$.value.includes(email as never)
+        }
       })
 
-      const nameFilter = emailFilter.filter(({name}) => {
-        if (!this.outputName$.value[0]){
+      const nameFilter = emailFilter.filter(({ name }) => {
+        if (!this.outputName$.value[0]) {
           return true
         } else {
           return this.outputName$.value.includes(name as never)
         }
       })
 
-      const usernameFilter = nameFilter.filter(({username}) => {
-        if (!this.outputUsername$.value[0]){
+      const usernameFilter = nameFilter.filter(({ username }) => {
+        if (!this.outputUsername$.value[0]) {
           return true
         } else {
           return this.outputUsername$.value.includes(username as never)
         }
       })
 
-      const websiteFilter = usernameFilter.filter(({website}) => {
-        if (!this.outputWebsite$.value[0]){
+      const websiteFilter = usernameFilter.filter(({ website }) => {
+        if (!this.outputWebsite$.value[0]) {
           return true
         } else {
           return this.outputWebsite$.value.includes(website as never)
         }
       })
 
-      const phoneFilter = websiteFilter.filter(({phone}) => {
-        if (!this.outputPhone$.value[0]){
+      const phoneFilter = websiteFilter.filter(({ phone }) => {
+        if (!this.outputPhone$.value[0]) {
           return true
         } else {
           return this.outputPhone$.value.includes(phone as never)
