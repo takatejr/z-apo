@@ -1,6 +1,8 @@
 export interface FetchData {
-    body: string,
-    id: number,
-    title: string,
-    userId: number
+    name: string,
+    phone: string,
+    website: string,
+    email: string,
+    username: string,
+    id: number
 }

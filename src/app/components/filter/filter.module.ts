@@ -7,6 +7,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
+import { FilterService } from './filter.service';
 @NgModule({
     declarations: [FilterComponent],
     imports: [
@@ -21,6 +22,7 @@ import {MatSelectModule} from '@angular/material/select';
     ],
     exports: [
         FilterComponent
-    ]
+    ],
+    providers: [FilterService]
 })
 export class FilterModule { }

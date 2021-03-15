@@ -1,7 +1,7 @@
 @import "../../shared/variables.scss";
 
 * {
-    font-size: 18px;
+    font-size: 1.4vvw;
 }
 
 .navbar-container {
@@ -13,7 +13,7 @@
 
 .logo {
     height: 100%;
-    width: 8vw;
+    width: 8%;
     color: whitesmoke;
     margin: 0 1%;
     display: flex;
@@ -24,7 +24,7 @@
 
 .navbuttons {
   display: flex;
-  width: 70vw;
+  width: 70%;
   background-color: rgb(30, 30, 130);
 
   & > .navbutton {
@@ -33,10 +33,10 @@
     min-width: 10%;
     max-width: 40%;
     align-items: center;
-    margin: auto 1vw;
     color: whitesmoke;
     column-gap: 5%;
     cursor: pointer;
+    margin: auto 5%;
 
     & > .icon {
       height: 40%;
@@ -45,7 +45,6 @@
     & > .nav-title {
         min-width: 10vw;
         max-width: 50vw;
-        word-break: break-word;
         margin: 1%;
     }
   }
@@ -66,6 +65,7 @@
   display: grid;
   grid-template-columns: 3fr 1fr;
   justify-items: center;
+  cursor: pointer;
 
   & > .login-text {
     margin: auto;
@@ -74,5 +74,12 @@
   & > .icon {
     margin: auto;
     height: 70%;
+  }
+}
+
+
+@media (max-width: 1250px) {
+  .navbutton {
+    min-width: 40vw;
   }
 }

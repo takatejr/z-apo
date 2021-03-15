@@ -7,6 +7,7 @@ import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FilterModule } from '../../components/filter/filter.module';
 import { CircleModule } from '../../components/circle/circle.module';
+import { DashboardDataService } from '../../shared/services/dashboard-data/dashboard-data.service';
 
 @NgModule({
     declarations: [DashboardComponent],
@@ -21,6 +22,9 @@ import { CircleModule } from '../../components/circle/circle.module';
     ],
     exports: [
         DashboardComponent,
+    ],
+    providers: [
+        DashboardDataService 
     ]
 })
 export class DashboardModule { }

@@ -1,8 +1,47 @@
 .filter-container {
-  width: 80%;
-  display: flex;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 2%;
+}
+
+.box {
+  height: 4vh;
+}
+
+.filter {
   margin: 0 10%;
-  justify-content: space-between;
+
+  & > .filter-by {
+    margin: -2% 0 2% 0;
+  }
+}
+
+.mat-form-field {
+  width: 100%;
+  margin: 2% 5% 2% 10%;
+}
+
+.search-button {
+  margin: 2% 10% 2% 2%;
+  height: 6vh;
+  width: 20%;
+  border-radius: 5%;
+  color: white;
+  font-size: 18px;
+  border: 2px solid #4f4ff0;
+  background-color: #297edf;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  cursor: pointer;
+}
+
+.dashboard-form {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
 }
 
 .mat-form-field-flex {
@@ -27,7 +66,53 @@
     text-align: center;
   }
 
+  & > .countries {
+    margin: 0 10%;
+  }
+
   & > .excel {
-      color: rgb(55, 123, 187);
+    color: rgb(55, 123, 187);
+  }
+}
+
+.company-list {
+  display: grid;
+  grid-template-columns: 2fr 8fr;
+  grid-template-rows: 20vh;
+  margin: 1% 7.5%;
+
+  & > .score {
+    height: 100%;
+    width: 100%;
+    border: 1px solid whitesmoke;
+  }
+}
+
+.title {
+  font-size: 1.3rem;
+  border-bottom: 1px solid gray;
+  margin: 1%;
+  padding: 0.5% 3%;
+}
+
+.details {
+  margin: 1%;
+
+  & > .detail {
+    display: grid;
+    grid-template-columns: 1fr 2fr 3fr 4fr;
+  }
+}
+
+@media (max-width: 1250px) {
+  .navbutton {
+    min-width: 40vw;
+  }
+
+  .filter-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 1% auto;
+    justify-items: center;
   }
 }

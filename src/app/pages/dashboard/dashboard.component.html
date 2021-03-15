@@ -1,5 +1,4 @@
-<p>dashboard works!</p>
-<form>
+<form class="dashboard-form">
   <mat-form-field appearance="outline">
     <mat-label></mat-label>
     <input
@@ -8,14 +7,12 @@
       aria-label="text"
       placeholder="Placeholder"
       [formControl]="searchControl"
-      (keydown.enter)="
-        $event.preventDefault(); searchByInputValue(searchControl.value)
-      "
+      (keydown.enter)="$event.preventDefault(); searchByInputValue()"
     />
     <mat-icon
       class="clear"
       matSuffix
-      *ngIf="clearx$ | async"
+      *ngIf="clear$ | async"
       (click)="clearSearchControl()"
     >
       <div class="box">
@@ -23,45 +20,46 @@
         <span>Clear all filters</span>
       </div></mat-icon
     >
-    <mat-hint>Hint</mat-hint>
   </mat-form-field>
+  <div class="search-button" (click)="searchByInputValue()">Search</div>
 </form>
 
-{{ clearx$ | async }}
-
-<div>
-  Filter by:
+<div class="filter" *ngIf="submit">
+ <span class="filter-by"> Filter by:</span>
   <div class="filter-container">
-    <app-filter></app-filter>
-    <app-filter></app-filter>
-    <app-filter></app-filter>
-    <app-filter></app-filter>
-    <app-filter></app-filter>
+    <app-filter
+      [data]="name$ | async"
+      [title]="'Name'"
+      (selectedToppings)="outputName$.next($event)"
+    ></app-filter>
+    <app-filter
+      [data]="email$ | async"
+      [title]="'Email'"
+      (selectedToppings)="outputEmail$.next($event)"
+    ></app-filter>
+    <app-filter
+      [data]="website$ | async"
+      [title]="'Website'"
+      (selectedToppings)="outputWebsite$.next($event)"
+    ></app-filter>
+    <app-filter
+      [data]="username$ | async"
+      [title]="'Username'"
+      (selectedToppings)="outputUsername$.next($event)"
+    ></app-filter>
+    <app-filter
+      [data]="phone$ | async"
+      [title]="'Phone'"
+      (selectedToppings)="outputPhone$.next($event)"
+    ></app-filter>
   </div>
 </div>
 
-
-<div *ngIf="data$ | async">
-  <div *ngFor="let item of (data$ | async)">
-    {{item.id}}
-  
-  </div>
-  
-</div>
-<app-circle></app-circle>
-
-
-
-
-
-
-
-
-<div>
+<div *ngIf="submit">
   <div class="board">
     <span class="result">Result</span>
-    <span class="companies">Companies</span>
-    <span class="countries">Countries</span>
+    <span class="companies">{{ (data$ | async)?.length}} Phones</span>
+    <span class="countries">{{ (data$ | async)?.length }} Websites</span>
     <span class="excel">Export to excel</span>
   </div>
   <div class="sort">
@@ -69,15 +67,35 @@
     <div class="sort-size"></div>
   </div>
   <ul>
-    <li >
-      <div class="score"></div>
+    <li class="company-list" *ngFor="let data of data$ | async">
+      <div class="score">
+        <app-circle [id]="data.id * 10"></app-circle>
+      </div>
       <div class="description">
-        <span class="title"></span>
+        <p class="title">{{ data.name }}</p>
         <div class="details">
-
+          <p class="detail">
+            <img src="" alt="" />
+            phone:
+            <span> {{ data.phone }}</span>
+          </p>
+          <p class="detail">
+            <img src="" alt="" />
+            email:
+            <span> {{ data.email }}</span>
+          </p>
+          <p class="detail">
+            <img src="" alt="" />
+            website:
+            <span> {{ data.website }}</span>
+          </p>
+          <p class="detail">
+            <img src="" alt="" />
+            username:
+            <span>{{ data.username }}</span>
+          </p>
         </div>
       </div>
     </li>
   </ul>
 </div>
-
