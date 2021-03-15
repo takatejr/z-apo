@@ -81,8 +81,7 @@ export class DashboardComponent implements OnInit {
       return phoneFilter
     }),
     map(e => e),
-    
-tap(e => console.log(e)))
+  )
 
   ngOnInit(): void {
     this.clear$ = this.searchControl.valueChanges
@@ -92,7 +91,7 @@ tap(e => console.log(e)))
       );
   }
 
-  searchByInputValue() {
+  searchByInputValue(value?: string) {
     this.submit = true;
     this.dashboardService.getData()
   }
