@@ -7,13 +7,17 @@
 
 .box {
   height: 4vh;
+  gap: 5%;
+  cursor: pointer;
+  color: #297edf;
 }
 
 .filter {
   margin: 0 10%;
 
   & > .filter-by {
-    margin: -2% 0 2% 0;
+    color: grey;
+    margin: -40px 10px 10px;
   }
 }
 
@@ -100,7 +104,13 @@
 
   & > .detail {
     display: grid;
-    grid-template-columns: 1fr 2fr 3fr 4fr;
+    grid-template-columns: 1fr 2fr 3fr 8fr;
+    gap: 5%;
+
+    & > .icon {
+      height: 2vh;
+      margin: auto;
+    }
   }
 }
 
@@ -112,11 +122,18 @@
     min-width: 40vw;
   }
 
-  .filter-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    margin: 1% auto;
-    justify-items: center;
+  .filter {
+    & > .filter-by {
+      color: grey;
+      margin: -10px auto 10px;
+    }
+
+    & > .filter-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      margin: 1% auto;
+      justify-items: center;
+    }
   }
 
   .company-list {
@@ -160,4 +177,22 @@
       margin: auto;
     }
   }
+
+  .detail {
+    display: grid;
+    grid-template-columns: 1fr 3fr 3fr;
+    gap: 5%;
+
+    & > span {
+      word-wrap: break-word;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .search-button {
+    margin: 5% 10% 2% 2%;
+  }
+
+
 }

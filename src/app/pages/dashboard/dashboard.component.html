@@ -25,7 +25,7 @@
 </form>
 
 <div class="filter" *ngIf="submit">
- <span class="filter-by"> Filter by:</span>
+  <div class="filter-by">Filter by:</div>
   <div class="filter-container">
     <app-filter
       [data]="name$ | async"
@@ -58,7 +58,7 @@
 <div *ngIf="submit">
   <div class="board">
     <span class="result">Result</span>
-    <span class="companies">{{ (data$ | async)?.length}} Phones</span>
+    <span class="companies">{{ (data$ | async)?.length }} Phones</span>
     <span class="countries">{{ (data$ | async)?.length }} Websites</span>
     <span class="excel">Export to excel</span>
   </div>
@@ -75,22 +75,22 @@
         <p class="title">{{ data.name }}</p>
         <div class="details">
           <p class="detail">
-            <img src="" alt="" />
+            <img class="icon" src="assets/phone.svg" alt="phone" />
             phone:
             <span> {{ data.phone }}</span>
           </p>
           <p class="detail">
-            <img src="" alt="" />
+            <img class="icon" src="assets/email.svg" alt="email" />
             email:
             <span> {{ data.email }}</span>
           </p>
           <p class="detail">
-            <img src="" alt="" />
+            <img class="icon" src="assets/web.svg" alt="website" />
             website:
             <span> {{ data.website }}</span>
           </p>
           <p class="detail">
-            <img src="" alt="" />
+            <img class="icon" src="assets/username.svg" alt="username" />
             username:
             <span>{{ data.username }}</span>
           </p>

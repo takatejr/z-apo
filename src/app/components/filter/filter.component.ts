@@ -1,8 +1,5 @@
-import { Component, EventEmitter, Input, Output, ViewEncapsulation, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ViewEncapsulation} from '@angular/core';
 import {FormControl} from '@angular/forms';
-import { Observable, of } from 'rxjs';
-import { tap, map, startWith } from 'rxjs/operators';
-import { FetchData } from '../../shared/types/FetchData.type';
 @Component({
   selector: 'app-filter',
   templateUrl: './filter.component.html',
@@ -12,7 +9,7 @@ import { FetchData } from '../../shared/types/FetchData.type';
 export class FilterComponent {
   toppingsControl = new FormControl([]);
   @Output() selectedToppings = new EventEmitter()
-  @Input() data: any = []
+  @Input() data: string[] | null = []
   @Input() title: string = '';
 
   onToppingRemoved(topping: string) {
@@ -27,5 +24,4 @@ export class FilterComponent {
       array.splice(index, 1);
     }
   }
-
 }

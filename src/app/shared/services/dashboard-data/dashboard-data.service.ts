@@ -18,8 +18,6 @@ export class DashboardDataService {
   phone$ = new BehaviorSubject<string[]>([])
   name$ = new BehaviorSubject<string[]>([])
 
-  isLoggedIn = new BehaviorSubject<boolean>(false) // tutaj powinno być np. sprawdzenie tokena
-
   constructor(private http: HttpClient) { }
 
   // post z payloadem lub get z params przy komunikacji http powinno być

@@ -1,4 +1,4 @@
-import { Component,  OnInit } from '@angular/core';
+import { Component,  OnInit, ViewEncapsulation } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { distinctUntilChanged, filter, map, mergeMap, startWith, switchMap, tap } from 'rxjs/operators';
 import { Observable, of, BehaviorSubject, combineLatest, from, forkJoin } from 'rxjs';
@@ -7,7 +7,7 @@ import { DashboardDataService } from '../../shared/services/dashboard-data/dashb
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
   submit = false
@@ -90,15 +90,6 @@ tap(e => console.log(e)))
         startWith(''),
         map(e => e),
       );
-
-
-        // .subscribe(e => console.log(e))
-
-
-
-
-
-      
   }
 
   searchByInputValue() {
