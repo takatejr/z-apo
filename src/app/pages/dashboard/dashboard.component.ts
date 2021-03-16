@@ -1,7 +1,7 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { distinctUntilChanged, filter, map, mergeMap, startWith, switchMap, tap } from 'rxjs/operators';
-import { Observable, of, BehaviorSubject, combineLatest, from, forkJoin } from 'rxjs';
+import { map, startWith } from 'rxjs/operators';
+import { Observable, of, BehaviorSubject, combineLatest } from 'rxjs';
 import { DashboardDataService } from '../../shared/services/dashboard-data/dashboard-data.service';
 
 @Component({
