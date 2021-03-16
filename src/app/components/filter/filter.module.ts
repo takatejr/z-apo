@@ -6,8 +6,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
-import {MatSelectModule} from '@angular/material/select';
-import { FilterService } from './filter.service';
+import { MatSelectModule } from '@angular/material/select';
 @NgModule({
     declarations: [FilterComponent],
     imports: [
@@ -22,7 +21,6 @@ import { FilterService } from './filter.service';
     ],
     exports: [
         FilterComponent
-    ],
-    providers: [FilterService]
+    ]
 })
 export class FilterModule { }
